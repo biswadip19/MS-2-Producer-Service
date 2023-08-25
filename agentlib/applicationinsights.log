@@ -1,0 +1,42 @@
+2023-08-25 23:00:28.037+05:30 ERROR c.m.applicationinsights.agent - 
+*************************
+Application Insights Java Agent 3.4.15 startup failed (PID 32874)
+*************************
+
+Description:
+No connection string provided
+
+Action:
+Please provide connection string.
+
+2023-08-25 23:10:06.676+05:30 INFO  c.m.applicationinsights.agent - Application Insights Java Agent 3.4.15 started successfully (PID 32981, JVM running for 4.092 s)
+2023-08-25 23:10:06.681+05:30 INFO  c.m.applicationinsights.agent - Java version: 18, vendor: Oracle Corporation, home: /Library/Java/JavaVirtualMachines/jdk-18.jdk/Contents/Home
+2023-08-25 23:11:20.404+05:30 ERROR c.azure.core.http.policy.RetryPolicy - {"az.sdk.message":"Retry attempts have been exhausted.","exception":"connect(..) failed: Host is down: /169.254.169.254:80","tryCount":3}
+2023-08-26 00:21:44.669+05:30 ERROR c.a.m.o.e.i.p.TelemetryPipeline - 
+*************************
+Application Insights Java failed to connect to https://eastus-8.in.applicationinsights.azure.com/v2.1/track
+*************************
+
+Description:
+Unable to resolve host in url
+
+Action:
+Please update your network configuration so that the host in this url can be resolved: https://eastus-8.in.applicationinsights.azure.com/v2.1/track
+Learn more about troubleshooting unknown host exception here: https://go.microsoft.com/fwlink/?linkid=2185830
+
+Note:
+This message is only logged the first time it occurs after startup.
+
+2023-08-26 00:22:17.465+05:30 WARN  c.a.m.o.e.i.q.QuickPulsePingSender - Pinging live metrics endpoint: io.netty.channel.unix.Errors$NativeIoException: readAddress(..) failed: Connection reset by peer (https://eastus.livediagnostics.monitor.azure.com/QuickPulseService.svc) (future warnings will be aggregated and logged once every 5 minutes)
+reactor.core.Exceptions$ReactiveException: io.netty.channel.unix.Errors$NativeIoException: readAddress(..) failed: Connection reset by peer
+	at reactor.core.Exceptions.propagate(Exceptions.java:408)
+	at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:101)
+	at reactor.core.publisher.Mono.block(Mono.java:1712)
+	at com.azure.monitor.opentelemetry.exporter.implementation.quickpulse.QuickPulsePingSender.ping(QuickPulsePingSender.java:102)
+	at com.azure.monitor.opentelemetry.exporter.implementation.quickpulse.QuickPulseCoordinator.ping(QuickPulseCoordinator.java:100)
+	at com.azure.monitor.opentelemetry.exporter.implementation.quickpulse.QuickPulseCoordinator.run(QuickPulseCoordinator.java:53)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:103)
+		... 5 common frames omitted
+Caused by: io.netty.channel.unix.Errors$NativeIoException: readAddress(..) failed: Connection reset by peer

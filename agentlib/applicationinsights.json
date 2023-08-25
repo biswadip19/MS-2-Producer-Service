@@ -1,0 +1,6 @@
+{
+  "connectionString": "InstrumentationKey=b9d8c2b6-1add-4e59-a6c5-6c515c21418b;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/",
+  "role": {
+    "name": "MS-TWO"
+  }
+}

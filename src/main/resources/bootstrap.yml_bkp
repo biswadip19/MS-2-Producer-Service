@@ -1,0 +1,13 @@
+server:
+      port: 9091
+      servlet:
+                context-path: /ms1
+spring:
+     application:
+                name: ms_1
+eureka:
+      client:
+            registerWithEureka: true
+            service-url:
+                  defaultZone: ${EUREKA_SERVER_ADDRESS}   
+      
